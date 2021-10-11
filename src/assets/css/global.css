@@ -12,4 +12,6 @@
 html {
   font-family: 'Helvetica Neue OTS';
   background-color: var(--BACKGROUND-COLOR);
+  font-size: 8px;
+  letter-spacing: 2px;
 }
