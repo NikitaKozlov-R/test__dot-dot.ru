@@ -22,5 +22,10 @@ export default {
 .wrapper {
   width: 100%;
   padding: 20px 170px;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px 16px;
+  justify-items: start;
 }
 </style>
