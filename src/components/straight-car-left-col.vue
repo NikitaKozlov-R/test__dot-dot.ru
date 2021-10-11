@@ -3,8 +3,8 @@
     <straight-car-header />
     <sc-route />
     <sc-transport />
-    <sc-cargo />
-    <sc-time />
+    <!-- <sc-cargo />
+    <sc-time /> -->
   </div>
 </template>
 
