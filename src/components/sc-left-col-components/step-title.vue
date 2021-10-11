@@ -46,4 +46,9 @@ export default {
   margin-top: 2px;
   margin-left: 8px;
 }
+@media screen and (max-width: 900px) {
+  .step-title__text {
+    font-size: 20px;
+  }
+}
 </style>

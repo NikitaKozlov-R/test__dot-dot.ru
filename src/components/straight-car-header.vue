@@ -13,4 +13,9 @@ export default {}
   color: #fff;
   padding: 20px 0;
 }
+@media screen and (max-width: 900px) {
+  .sc-header {
+    font-size: 30px;
+  }
+}
 </style>

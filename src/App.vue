@@ -28,4 +28,11 @@ export default {
   gap: 0px 16px;
   justify-items: start;
 }
+@media screen and (max-width: 900px) {
+  .wrapper {
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+  }
+}
 </style>
