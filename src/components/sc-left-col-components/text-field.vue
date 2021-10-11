@@ -35,6 +35,7 @@ export default {
   outline: none;
   border: none;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding-left: 16px;
 }
 .text-field__input:focus {
   border: 1px solid var(--COLOR-PRIMARY);
