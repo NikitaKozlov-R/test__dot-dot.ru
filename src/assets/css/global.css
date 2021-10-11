@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Helvetica Neue OTS';
+  src: url('../font/helveticaneueots.ttf');
+}
+:root {
+  --COLOR-PRIMARY: #ef483e;
+  --COLOR-SECONDARY: #cfcfcf;
+  --BACKGROUND-COLOR: #343539;
+  --COLOR-SUBSTRATE: #4b4b4f;
+  --COLOR-SECONDARY-SUBSTRATE: #717174;
+}
+html {
+  font-family: 'Helvetica Neue OTS';
+}
