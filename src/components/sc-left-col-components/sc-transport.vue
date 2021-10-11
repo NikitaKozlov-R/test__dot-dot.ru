@@ -42,5 +42,6 @@ export default {
 .sc-transporn__container {
   width: 100%;
   display: flex;
+  margin-bottom: 40px;
 }
 </style>

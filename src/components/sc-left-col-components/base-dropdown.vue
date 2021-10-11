@@ -53,4 +53,7 @@ export default {
   font-size: 2rem;
   padding: 0 16px;
 }
+.base-dropdown__list-item {
+  font-size: 2rem;
+}
 </style>

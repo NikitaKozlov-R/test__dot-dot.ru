@@ -3,8 +3,8 @@
     <straight-car-header />
     <sc-route />
     <sc-transport />
-    <!-- <sc-cargo />
-    <sc-time /> -->
+    <sc-cargo />
+    <!-- <sc-time /> -->
   </div>
 </template>
 
@@ -12,12 +12,14 @@
 import StraightCarHeader from '@/components/straight-car-header.vue'
 import ScRoute from '@/components/sc-left-col-components/sc-route.vue'
 import ScTransport from '@/components/sc-left-col-components/sc-transport.vue'
+import ScCargo from '@/components/sc-left-col-components/sc-cargo.vue'
 
 export default {
   components: {
     StraightCarHeader,
     ScRoute,
     ScTransport,
+    ScCargo,
   },
 }
 </script>
