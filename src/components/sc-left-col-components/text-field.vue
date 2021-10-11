@@ -1,7 +1,7 @@
 <template>
   <div class="text-field">
     <label class="text-field__label" :for="title">{{ title }}</label>
-    <input :id="title" class="text-field__input" type="text" />
+    <input :id="title" v-model="model" class="text-field__input" type="text" />
   </div>
 </template>
 
@@ -11,6 +11,21 @@ export default {
     title: {
       required: true,
       type: String,
+    },
+    modelValue: {
+      required: false,
+      type: [String, Number],
+      default: '',
+    },
+  },
+  computed: {
+    model: {
+      get() {
+        return this.modelValue
+      },
+      set(value) {
+        this.$emit('update:modelValue', value)
+      },
     },
   },
 }

@@ -1,8 +1,8 @@
 <template>
   <div class="sc-route">
     <step-title title="Маршрут" number="1" />
-    <text-field title="Откуда" />
-    <text-field title="Куда" />
+    <text-field v-model="formData.from" title="Откуда" />
+    <text-field v-model="formData.to" title="Куда" />
   </div>
 </template>
 
@@ -14,6 +14,14 @@ export default {
   components: {
     StepTitle,
     TextField,
+  },
+  data() {
+    return {
+      formData: {
+        from: '',
+        to: '',
+      },
+    }
   },
 }
 </script>
