@@ -37,12 +37,13 @@ export default {
   color: #fff;
   font-size: 2rem;
   font-weight: 700;
+  letter-spacing: normal;
 }
 .step-title__text {
   font-size: 3rem;
   font-weight: 700;
   color: #fff;
-  margin-top: 4px;
+  margin-top: 2px;
   margin-left: 8px;
 }
 </style>
