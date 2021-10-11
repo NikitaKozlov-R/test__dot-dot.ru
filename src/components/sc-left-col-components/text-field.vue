@@ -1,0 +1,44 @@
+<template>
+  <div class="text-field">
+    <label class="text-field__label" :for="title">{{ title }}</label>
+    <input :id="title" class="text-field__input" type="text" />
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    title: {
+      required: true,
+      type: String,
+    },
+  },
+}
+</script>
+
+<style>
+.text-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+.text-field__label {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.text-field__input {
+  height: 44px;
+  font-size: 2rem;
+  outline: none;
+  border: none;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.text-field__input:focus {
+  border: 1px solid var(--COLOR-PRIMARY);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px var(--COLOR-PRIMARY);
+  outline: 0 none;
+}
+</style>
