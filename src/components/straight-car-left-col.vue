@@ -11,11 +11,13 @@
 <script>
 import StraightCarHeader from '@/components/straight-car-header.vue'
 import ScRoute from '@/components/sc-left-col-components/sc-route.vue'
+import ScTransport from '@/components/sc-left-col-components/sc-transport.vue'
 
 export default {
   components: {
     StraightCarHeader,
     ScRoute,
+    ScTransport,
   },
 }
 </script>

@@ -17,3 +17,10 @@ export default {
   },
 }
 </script>
+
+<style>
+.sc-route {
+  width: 100%;
+  margin-bottom: 40px;
+}
+</style>
