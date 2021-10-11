@@ -43,7 +43,7 @@ export default {
   font-size: 3rem;
   font-weight: 700;
   color: #fff;
-  margin-top: 2px;
+  margin-top: 4px;
   margin-left: 8px;
 }
 @media screen and (max-width: 900px) {
