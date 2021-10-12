@@ -15,6 +15,7 @@ import ScRoute from '@/components/root-components/sc-route.vue'
 import ScTransport from '@/components/root-components/sc-transport.vue'
 import ScCargo from '@/components/root-components/sc-cargo.vue'
 import ScTime from '@/components/root-components/sc-time.vue'
+import ScComment from '@/components/root-components/sc-comment.vue'
 
 export default {
   components: {
@@ -23,6 +24,7 @@ export default {
     ScTransport,
     ScCargo,
     ScTime,
+    ScComment,
   },
 }
 </script>
