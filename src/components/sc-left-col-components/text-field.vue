@@ -1,7 +1,7 @@
 <template>
   <div class="text-field">
     <label class="text-field__label" :for="title">{{ title }}</label>
-    <input :id="title" v-model="model" class="text-field__input" type="text" />
+    <input :id="title" v-model="model" class="text-field__input" type="text" :placeholder="placeholder" />
   </div>
 </template>
 
@@ -10,6 +10,11 @@ export default {
   props: {
     title: {
       required: true,
+      type: String,
+    },
+    placeholder: {
+      required: false,
+      default: '',
       type: String,
     },
     modelValue: {
@@ -43,6 +48,7 @@ export default {
   color: #fff;
   font-weight: 400;
   margin-bottom: 8px;
+  letter-spacing: normal;
 }
 .text-field__input {
   height: 44px;
