@@ -29,18 +29,23 @@
       <text-field title="Объявленная ценность, ₽" placeholder="≥ 1" />
     </div>
   </div>
+  <div class="sc-cargo__container">
+    <base-checkbox massage="Требуется температурный режим" />
+  </div>
 </template>
 
 <script>
 import StepTitle from '@/components/sc-left-col-components/step-title.vue'
 import BaseDropdown from '@/components/sc-left-col-components/base-dropdown.vue'
 import TextField from '@/components/sc-left-col-components/text-field.vue'
+import BaseCheckbox from '@/components/sc-left-col-components/base-checkbox.vue'
 
 export default {
   components: {
     StepTitle,
     BaseDropdown,
     TextField,
+    BaseCheckbox,
   },
 }
 </script>
@@ -51,7 +56,6 @@ export default {
   margin-bottom: 16px;
 }
 .sc-cargo__container--2item {
-  margin-bottom: 40px;
   width: calc(50% - 12px);
   display: flex;
   justify-content: space-between;
