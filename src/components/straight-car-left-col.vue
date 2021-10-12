@@ -4,7 +4,8 @@
     <sc-route />
     <sc-transport />
     <sc-cargo />
-    <!-- <sc-time /> -->
+    <!-- <sc-time />
+    <sc-comment /> -->
   </div>
 </template>
 

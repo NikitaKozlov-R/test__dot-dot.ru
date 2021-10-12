@@ -3,26 +3,11 @@
   <div class="sc-transporn__container">
     <base-dropdown
       title="Грузоподъёмность"
-      placeholder="Не выбранa"
-      :options="[
-        { id: 1, item: 'Вариант 1' },
-        { id: 2, item: 'Вариант 2' },
-        { id: 3, item: 'Вариант 3' },
-        { id: 4, item: 'Вариант 4' },
-        { id: 5, item: 'Вариант 5' },
-      ]"
-    ></base-dropdown>
-    <base-dropdown
-      title="Способ погрузки"
-      placeholder="Не выбран"
-      :options="[
-        { id: 1, item: 'Вариант 1' },
-        { id: 2, item: 'Вариант 2' },
-        { id: 3, item: 'Вариант 3' },
-        { id: 4, item: 'Вариант 4' },
-        { id: 5, item: 'Вариант 5' },
-      ]"
-    ></base-dropdown>
+      :options="['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4', 'Вариант 5']"
+      :default="'Не выбрана'"
+      class="select"
+      @input="alert(displayToKey($event))"
+    />
   </div>
 </template>
 

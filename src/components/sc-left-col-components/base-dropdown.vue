@@ -1,16 +1,24 @@
 <template>
   <div class="base-dropdown">
     <label class="base-dropdown__title" :for="title">{{ title }}</label>
-    <select :id="title" class="base-dropdown__list">
-      <option disabled selected hidden>{{ placeholder }}</option>
-      <option
-        v-for="item in options"
-        :key="item.id"
-        :value="item.item"
-        class="base-dropdown__list-item"
-        v-text="item.item"
-      ></option>
-    </select>
+    <div class="base-dropdown__container" :tabindex="tabindex" @blur="open = false">
+      <div class="base-dropdown__selected" :class="{ open: open }" @click="open = !open">
+        {{ selected }}
+      </div>
+      <div class="base-dropdown__items" :class="{ selectHide: !open }">
+        <div
+          v-for="(option, i) of options"
+          :key="i"
+          class="base-dropdown__items--drop"
+          @click="
+            ;(selected = option), (open = false)
+            $emit('input', option)
+          "
+        >
+          {{ option }}
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -18,42 +26,109 @@
 export default {
   props: {
     title: {
-      required: true,
       type: String,
-    },
-    placeholder: {
       required: true,
-      type: String,
     },
     options: {
-      required: true,
       type: Array,
-      default: () => [],
+      required: true,
     },
+    default: {
+      type: String,
+      required: false,
+      default: null,
+    },
+    tabindex: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
+  },
+  data() {
+    return {
+      selected: this.default ? this.default : this.options.length > 0 ? this.options[0] : null,
+      open: false,
+    }
+  },
+  mounted() {
+    this.$emit('input', this.selected)
   },
 }
 </script>
 
-<style>
+<style scoped>
 .base-dropdown {
   width: 172px;
   display: flex;
   flex-direction: column;
-  margin-right: 12px;
 }
 .base-dropdown__title {
-  font-size: 2rem;
   color: #fff;
-  letter-spacing: normal;
+  font-size: 2rem;
   margin-bottom: 8px;
+  letter-spacing: normal;
 }
-.base-dropdown__list {
+.base-dropdown__container {
+  position: relative;
   width: 100%;
+  text-align: left;
+  outline: none;
   height: 44px;
-  font-size: 2rem;
-  padding: 0 16px;
+  line-height: 44px;
 }
-.base-dropdown__list-item {
+
+.base-dropdown__selected {
+  background-color: #fff;
+  color: #000;
+  padding-left: 16px;
+  cursor: pointer;
+  user-select: none;
   font-size: 2rem;
+}
+
+.base-dropdown__selected.open {
+  border: none;
+}
+
+.base-dropdown__selected:after {
+  position: absolute;
+  content: '';
+  top: 20px;
+  right: 1em;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-color: #000 transparent transparent transparent;
+}
+.base-dropdown__selected.open:after {
+  transform: rotate(180deg);
+  top: 15px;
+}
+
+.base-dropdown__items {
+  color: #000;
+  overflow: hidden;
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.base-dropdown__items--drop {
+  color: #000;
+  font-size: 2rem;
+  padding-left: 1em;
+  cursor: pointer;
+  user-select: none;
+}
+
+.base-dropdown__items--drop:hover {
+  background-color: var(--COLOR-PRIMARY);
+  color: #fff;
+}
+
+.selectHide {
+  display: none;
 }
 </style>
