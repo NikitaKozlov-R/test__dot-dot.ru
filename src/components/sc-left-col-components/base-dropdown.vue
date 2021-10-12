@@ -93,6 +93,8 @@ export default {
 
 .base-dropdown__selected.open {
   border: none;
+  z-index: 2;
+  position: relative;
 }
 
 .base-dropdown__selected:after {
@@ -112,7 +114,6 @@ export default {
 
 .base-dropdown__items {
   color: #000;
-  /* overflow: hidden; */
   position: absolute;
   background-color: #fff;
   left: 0;
@@ -122,6 +123,7 @@ export default {
   white-space: nowrap;
   flex-direction: column;
   width: auto;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .base-dropdown__items--drop {
