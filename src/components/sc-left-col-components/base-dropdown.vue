@@ -58,9 +58,10 @@ export default {
 
 <style scoped>
 .base-dropdown {
-  width: 172px;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  margin-right: 12px;
 }
 .base-dropdown__title {
   color: #fff;
@@ -75,6 +76,7 @@ export default {
   outline: none;
   height: 44px;
   line-height: 44px;
+  letter-spacing: normal;
 }
 
 .base-dropdown__selected {
@@ -121,6 +123,8 @@ export default {
   padding-left: 1em;
   cursor: pointer;
   user-select: none;
+  height: 28px;
+  line-height: 28px;
 }
 
 .base-dropdown__items--drop:hover {

@@ -8,6 +8,13 @@
       class="select"
       @input="alert(displayToKey($event))"
     />
+    <base-dropdown
+      title="Способ погрузки"
+      :options="['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4', 'Вариант 5']"
+      :default="'Задняя'"
+      class="select"
+      @input="alert(displayToKey($event))"
+    />
   </div>
 </template>
 
@@ -26,7 +33,17 @@ export default {
 <style>
 .sc-transporn__container {
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0px 12px;
+  justify-items: start;
   margin-bottom: 40px;
+}
+@media screen and (max-width: 900px) {
+  .sc-transporn__container {
+    grid-auto-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 </style>
