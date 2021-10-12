@@ -6,7 +6,6 @@
       :options="['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4', 'Вариант 5']"
       :default="'Не выбран'"
       class="select"
-      @input="alert(displayToKey($event))"
     />
   </div>
   <div class="sc-cargo__container--2item">
@@ -22,7 +21,6 @@
         ]"
         :default="'Класс 5 — Окисляющие вещества и органические перекиси'"
         class="select"
-        @input="alert(displayToKey($event))"
       />
     </div>
     <div class="sc-cargo__container--straight-width">
@@ -30,7 +28,7 @@
     </div>
   </div>
   <div class="sc-cargo__container">
-    <base-checkbox massage="Требуется температурный режим" />
+    <base-checkbox v-model="tempRegime" massage="Требуется температурный режим" />
   </div>
 </template>
 
@@ -46,6 +44,11 @@ export default {
     BaseDropdown,
     TextField,
     BaseCheckbox,
+  },
+  data() {
+    return {
+      tempRegime: false,
+    }
   },
 }
 </script>

@@ -6,14 +6,12 @@
       :options="['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4', 'Вариант 5']"
       :default="'Не выбрана'"
       class="select"
-      @input="alert(displayToKey($event))"
     />
     <base-dropdown
       title="Способ погрузки"
       :options="['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4', 'Вариант 5']"
       :default="'Задняя'"
       class="select"
-      @input="alert(displayToKey($event))"
     />
   </div>
 </template>

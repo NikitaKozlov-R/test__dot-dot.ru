@@ -1,6 +1,6 @@
 <template>
   <div class="base-checbox__container">
-    <input id="base-checkbox" class="base-checkbox" type="checkbox" />
+    <input id="base-checkbox" v-model="model" class="base-checkbox" type="checkbox" />
     <label for="base-checkbox" class="base-checkbox__massage">{{ massage }}</label>
   </div>
 </template>
@@ -11,6 +11,21 @@ export default {
     massage: {
       type: String,
       required: true,
+    },
+    modelValue: {
+      required: false,
+      type: Boolean,
+      default: false,
+    },
+  },
+  computed: {
+    model: {
+      get() {
+        return this.modelValue
+      },
+      set(value) {
+        this.$emit('update:modelValue', value)
+      },
     },
   },
 }
