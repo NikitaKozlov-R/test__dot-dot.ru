@@ -9,7 +9,7 @@
       @input="alert(displayToKey($event))"
     />
   </div>
-  <div class="sc-cargo__container--4col">
+  <div class="sc-cargo__container--2item">
     <div class="sc-cargo__container--straight-width">
       <base-dropdown
         title="Класс опасности"
@@ -25,7 +25,7 @@
         @input="alert(displayToKey($event))"
       />
     </div>
-    <text-field title="Откуда" />
+    <!-- <text-field title="Откуда" /> -->
   </div>
 </template>
 
@@ -38,35 +38,24 @@ export default {
   components: {
     StepTitle,
     BaseDropdown,
-    TextField,
+    // TextField,
   },
 }
 </script>
 
 <style>
 .sc-cargo__container {
-  display: grid;
-  grid-auto-columns: 1fr;
-  grid-template-columns: 1fr 1fr;
-  gap: 0px 12px;
-  justify-items: start;
+  width: 50%;
   margin-bottom: 16px;
 }
-.sc-cargo__container--4col {
-  display: grid;
-  grid-auto-columns: 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 0px 12px;
-  justify-items: start;
-  margin-bottom: 16px;
+.sc-cargo__container--2item {
+  margin-bottom: 40px;
+  width: calc(50% + 12px);
+  display: flex;
 }
 .sc-cargo__container--straight-width {
-  width: 172px;
+  width: calc(50% - 12px);
 }
 @media screen and (max-width: 900px) {
-  .sc-cargo__container {
-    grid-auto-columns: 1fr;
-    grid-template-columns: 1fr;
-  }
 }
 </style>

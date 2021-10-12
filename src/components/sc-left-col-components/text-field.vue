@@ -39,7 +39,7 @@ export default {
   margin-bottom: 16px;
 }
 .text-field__label {
-  font-size: 2rem;
+  font-size: 14px;
   color: #fff;
   font-weight: 400;
   margin-bottom: 8px;

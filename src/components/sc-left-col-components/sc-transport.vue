@@ -32,18 +32,13 @@ export default {
 
 <style>
 .sc-transporn__container {
-  width: 100%;
-  display: grid;
-  grid-auto-columns: 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 0px 12px;
-  justify-items: start;
   margin-bottom: 40px;
+  width: calc(50% + 12px);
+  display: flex;
 }
 @media screen and (max-width: 900px) {
   .sc-transporn__container {
-    grid-auto-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    width: 100%;
   }
 }
 </style>
