@@ -1,6 +1,6 @@
 <template>
   <div class="left-col">
-    <straight-car-header />
+    <sc-header />
     <sc-route />
     <sc-transport />
     <sc-cargo />
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import StraightCarHeader from '@/components/straight-car-header.vue'
+import ScHeader from '@/components/root-components/sc-header.vue'
 import ScRoute from '@/components/root-components/sc-route.vue'
 import ScTransport from '@/components/root-components/sc-transport.vue'
 import ScCargo from '@/components/root-components/sc-cargo.vue'
@@ -19,7 +19,7 @@ import ScComment from '@/components/root-components/sc-comment.vue'
 
 export default {
   components: {
-    StraightCarHeader,
+    ScHeader,
     ScRoute,
     ScTransport,
     ScCargo,
