@@ -39,7 +39,7 @@
   <div class="sc-cargo__container">
     <base-checkbox v-model="tempRegime" massage="Требуется температурный режим" />
   </div>
-  <div class="sc-cargo__container">
+  <div v-if="tempRegime" class="sc-cargo__container">
     <temp-regime />
   </div>
 </template>
@@ -61,7 +61,7 @@ export default {
   },
   data() {
     return {
-      tempRegime: false,
+      tempRegime: true,
     }
   },
 }
