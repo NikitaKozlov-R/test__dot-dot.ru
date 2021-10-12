@@ -65,7 +65,7 @@ export default {
 }
 .base-dropdown__title {
   color: #fff;
-  font-size: 2rem;
+  font-size: 14px;
   margin-bottom: 8px;
   letter-spacing: normal;
 }
@@ -86,6 +86,9 @@ export default {
   cursor: pointer;
   user-select: none;
   font-size: 2rem;
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .base-dropdown__selected.open {
@@ -109,12 +112,16 @@ export default {
 
 .base-dropdown__items {
   color: #000;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: absolute;
   background-color: #fff;
   left: 0;
   right: 0;
   z-index: 1;
+  display: flex;
+  white-space: nowrap;
+  flex-direction: column;
+  width: auto;
 }
 
 .base-dropdown__items--drop {
