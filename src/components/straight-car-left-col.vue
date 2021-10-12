@@ -11,9 +11,9 @@
 
 <script>
 import StraightCarHeader from '@/components/straight-car-header.vue'
-import ScRoute from '@/components/sc-left-col-components/sc-route.vue'
-import ScTransport from '@/components/sc-left-col-components/sc-transport.vue'
-import ScCargo from '@/components/sc-left-col-components/sc-cargo.vue'
+import ScRoute from '@/components/root-components/sc-route.vue'
+import ScTransport from '@/components/root-components/sc-transport.vue'
+import ScCargo from '@/components/root-components/sc-cargo.vue'
 
 export default {
   components: {

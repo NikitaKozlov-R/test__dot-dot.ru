@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import StepTitle from '@/components/sc-left-col-components/step-title.vue'
-import TextField from '@/components/sc-left-col-components/text-field.vue'
+import StepTitle from '@/components/base-components/step-title.vue'
+import TextField from '@/components/base-components/text-field.vue'
 
 export default {
   components: {

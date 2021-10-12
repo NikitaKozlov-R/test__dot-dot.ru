@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import StepTitle from '@/components/sc-left-col-components/step-title.vue'
-import BaseDropdown from '@/components/sc-left-col-components/base-dropdown.vue'
+import StepTitle from '@/components/base-components/step-title.vue'
+import BaseDropdown from '@/components/base-components/base-dropdown.vue'
 
 export default {
   components: {
