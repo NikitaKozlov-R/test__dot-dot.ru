@@ -39,9 +39,11 @@
   <div class="sc-cargo__container">
     <base-checkbox v-model="tempRegime" massage="Требуется температурный режим" />
   </div>
-  <div v-if="tempRegime" class="sc-cargo__container">
-    <temp-regime />
-  </div>
+  <transition name="fade">
+    <div v-if="tempRegime" class="sc-cargo__container">
+      <temp-regime />
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -61,7 +63,7 @@ export default {
   },
   data() {
     return {
-      tempRegime: true,
+      tempRegime: false,
     }
   },
 }
@@ -82,6 +84,19 @@ export default {
   min-width: 50%;
   margin-right: 12px;
 }
+
+/* Стили для анимации */
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
 @media screen and (max-width: 900px) {
 }
 </style>
