@@ -25,7 +25,9 @@
         @input="alert(displayToKey($event))"
       />
     </div>
-    <!-- <text-field title="Откуда" /> -->
+    <div class="sc-cargo__container--straight-width">
+      <text-field title="Объявленная ценность, ₽" placeholder="≥ 1" />
+    </div>
   </div>
 </template>
 
@@ -38,7 +40,7 @@ export default {
   components: {
     StepTitle,
     BaseDropdown,
-    // TextField,
+    TextField,
   },
 }
 </script>
@@ -50,11 +52,14 @@ export default {
 }
 .sc-cargo__container--2item {
   margin-bottom: 40px;
-  width: calc(50% + 12px);
+  width: calc(50% - 12px);
   display: flex;
+  justify-content: space-between;
 }
 .sc-cargo__container--straight-width {
-  width: calc(50% - 12px);
+  width: 50%;
+  min-width: 50%;
+  margin-right: 12px;
 }
 @media screen and (max-width: 900px) {
 }
