@@ -6,7 +6,7 @@
     </div>
     <div class="base-radio__container">
       <div class="base-radio__input">
-        <input :id="uniqueId" class="base-radio__input-radio" type="radio" />
+        <input :id="uniqueId" name="base-radio" class="base-radio__input-radio" type="radio" />
         <label class="base-radio__input-label" :for="uniqueId">Адрес не указан</label>
       </div>
       <button class="base-radio__button">НЕ ВЫБРАНО</button>
