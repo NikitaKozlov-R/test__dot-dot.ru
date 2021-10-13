@@ -21,7 +21,6 @@ export default {
 
 <style>
 .temp-regime {
-  margin-bottom: 40px;
   width: 50%;
   display: flex;
 }

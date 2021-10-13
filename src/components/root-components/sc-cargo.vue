@@ -24,7 +24,7 @@
           title="Класс опасности"
           :options="[
             'Класс 5 — Окисляющие вещества и органические перекиси',
-            'Вариант 2',
+            'Класс 4 — Легко воспламеняющиеся твёрдые вещества',
             'Вариант 3',
             'Вариант 4',
             'Вариант 5',
@@ -104,11 +104,11 @@ export default {
 }
 
 @media screen and (max-width: 900px) {
-  .sc-cargo__container {
-    width: 100%;
-  }
   .sc-cargo__container--2item {
     width: calc(100% - 12px);
+  }
+  .sc-cargo__container {
+    width: 100%;
   }
 }
 </style>

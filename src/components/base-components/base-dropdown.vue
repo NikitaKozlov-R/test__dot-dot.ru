@@ -3,19 +3,19 @@
     <label class="base-dropdown__title" :for="title">{{ title }}</label>
     <div class="base-dropdown__container" :tabindex="tabindex" @blur="open = false">
       <div class="base-dropdown__selected" :class="{ open: open }" @click="open = !open">
-        {{ selected }}
+        <span class="base-dropdown__selected-text">{{ selected }}</span>
+        <div class="base-dropdown__arrow-wrapper">
+          <div class="base-dropdown__arrow" :class="{ 'base-dropdown__arrow--rotated': open }"></div>
+        </div>
       </div>
       <div class="base-dropdown__items" :class="{ selectHide: !open }">
         <div
           v-for="(option, i) of options"
           :key="i"
-          class="base-dropdown__items--drop"
-          @click="
-            ;(selected = option), (open = false)
-            $emit('input', option)
-          "
+          class="base-dropdown__item-wrapper"
+          @click="handleOptionSelect(option)"
         >
-          {{ option }}
+          <span class="base-dropdown__item">{{ option }}</span>
         </div>
       </div>
     </div>
@@ -53,6 +53,14 @@ export default {
   mounted() {
     this.$emit('input', this.selected)
   },
+
+  methods: {
+    handleOptionSelect(option) {
+      this.selected = option
+      this.open = false
+      this.$emit('input', option)
+    },
+  },
 }
 </script>
 
@@ -69,9 +77,11 @@ export default {
   margin-bottom: 8px;
   letter-spacing: normal;
 }
+
 .base-dropdown__container {
   position: relative;
   width: 100%;
+  min-width: 100%;
   text-align: left;
   outline: none;
   height: 44px;
@@ -80,36 +90,63 @@ export default {
 }
 
 .base-dropdown__selected {
-  background-color: #fff;
+  background: #fff;
   color: #000;
-  padding-left: 16px;
-  cursor: pointer;
-  user-select: none;
-  font-size: 2rem;
   display: flex;
+  padding-left: 2em;
+  padding-right: 1em;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.base-dropdown__selected-text {
+  font-size: 2rem;
+  padding-right: 3em;
   white-space: nowrap;
+  text-overflow: clip;
+  user-select: none;
   overflow: hidden;
+}
+
+.base-dropdown__selected-text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 3em;
+  left: 0;
+  bottom: 0;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 80%,
+    rgba(255, 255, 255, 0.9) 90%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.base-dropdown__arrow-wrapper {
+  padding: 0 2em;
+}
+
+.base-dropdown__arrow {
+  width: 0;
+  height: 0;
+  margin-top: 4px;
+  border: 5px solid transparent;
+  border-color: #000 transparent transparent transparent;
+}
+
+.base-dropdown__arrow--rotated {
+  transform: rotate(180deg);
+  margin-top: -4px;
 }
 
 .base-dropdown__selected.open {
   border: none;
   z-index: 2;
   position: relative;
-}
-
-.base-dropdown__selected:after {
-  position: absolute;
-  content: '';
-  top: 20px;
-  right: 1em;
-  width: 0;
-  height: 0;
-  border: 5px solid transparent;
-  border-color: #000 transparent transparent transparent;
-}
-.base-dropdown__selected.open:after {
-  transform: rotate(180deg);
-  top: 15px;
 }
 
 .base-dropdown__items {
@@ -122,23 +159,56 @@ export default {
   display: flex;
   white-space: nowrap;
   flex-direction: column;
-  width: auto;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.base-dropdown__items--drop {
+.base-dropdown__item-wrapper {
   color: #000;
   font-size: 2rem;
-  padding-left: 1em;
   cursor: pointer;
-  user-select: none;
   height: 28px;
   line-height: 28px;
+  position: relative;
+  padding-right: 1em;
+  min-width: 100%;
 }
 
-.base-dropdown__items--drop:hover {
+.base-dropdown__item {
+  display: block;
+  padding: 0 1em;
+  user-select: none;
+  white-space: nowrap;
+  text-overflow: clip;
+  overflow: hidden;
+}
+
+.base-dropdown__item-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 80%,
+    rgba(255, 255, 255, 0.9) 90%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  z-index: 1;
+}
+
+.base-dropdown__item-wrapper:hover {
   background-color: var(--COLOR-PRIMARY);
   color: #fff;
+  text-overflow: ellipsis;
+  width: max-content;
+}
+
+.base-dropdown__item-wrapper:hover::after {
+  opacity: 0;
 }
 
 .selectHide {
