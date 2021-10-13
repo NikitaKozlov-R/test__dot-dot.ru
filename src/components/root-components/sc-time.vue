@@ -1,8 +1,8 @@
 <template>
   <step-title title="Время" number="4" />
   <div class="sc-time">
-    <base-radio title="Когда прибыть на точку" title-right="700 км в день" />
-    <base-radio title="Когда прибыть на точку" title-right="700 км в день" />
+    <base-radio title="Когда прибыть на точку" title-right="700 км в день" unique-id="radio-1" />
+    <base-radio unique-id="radio-2" />
   </div>
 </template>
 
@@ -18,4 +18,9 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.sc-time {
+  width: 100%;
+  margin-bottom: 16px;
+}
+</style>
