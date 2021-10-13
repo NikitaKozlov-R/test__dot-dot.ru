@@ -29,6 +29,7 @@ module.exports = {
     'trailing-comma': 0,
     'vue/valid-v-slot': 0,
     'vue/no-multiple-template-root': 0,
+    'vue/no-v-model-argument': 0,
   },
 
   extends: ['plugin:prettier/recommended', 'plugin:vue/recommended', '@vue/prettier'],
