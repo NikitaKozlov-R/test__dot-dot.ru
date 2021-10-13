@@ -1,49 +1,51 @@
 <template>
-  <step-title title="Груз" number="3" />
-  <div class="sc-cargo__container">
-    <base-dropdown
-      title="Тип груза"
-      :options="[
-        'Вариант 1',
-        'Вариант 2',
-        'Вариант 3',
-        'Вариант 4',
-        'Вариант 5',
-        'Вариант 6',
-        'Вариант 7',
-        'Вариант 8',
-      ]"
-      :default="'Не выбран'"
-      class="select"
-    />
-  </div>
-  <div class="sc-cargo__container--2item">
-    <div class="sc-cargo__container--straight-width">
+  <div class="sc-cargo">
+    <step-title title="Груз" number="3" />
+    <div class="sc-cargo__container">
       <base-dropdown
-        title="Класс опасности"
+        title="Тип груза"
         :options="[
-          'Класс 5 — Окисляющие вещества и органические перекиси',
+          'Вариант 1',
           'Вариант 2',
           'Вариант 3',
           'Вариант 4',
           'Вариант 5',
+          'Вариант 6',
+          'Вариант 7',
+          'Вариант 8',
         ]"
-        :default="'Класс 5 — Окисляющие вещества и органические перекиси'"
+        :default="'Не выбран'"
         class="select"
       />
     </div>
-    <div class="sc-cargo__container--straight-width">
-      <text-field title="Объявленная ценность, ₽" placeholder="≥ 1" />
+    <div class="sc-cargo__container--2item">
+      <div class="sc-cargo__container--straight-width">
+        <base-dropdown
+          title="Класс опасности"
+          :options="[
+            'Класс 5 — Окисляющие вещества и органические перекиси',
+            'Вариант 2',
+            'Вариант 3',
+            'Вариант 4',
+            'Вариант 5',
+          ]"
+          :default="'Класс 5 — Окисляющие вещества и органические перекиси'"
+          class="select"
+        />
+      </div>
+      <div class="sc-cargo__container--straight-width">
+        <text-field title="Объявленная ценность, ₽" placeholder="≥ 1" />
+      </div>
     </div>
-  </div>
-  <div class="sc-cargo__container">
-    <base-checkbox v-model="tempRegime" massage="Требуется температурный режим" />
-  </div>
-  <transition name="fade">
-    <div v-if="tempRegime" class="sc-cargo__container">
-      <temp-regime />
+    <div class="sc-cargo__container">
+      <base-checkbox v-model="tempRegime" massage="Требуется температурный режим" />
     </div>
-  </transition>
+    <transition name="fade">
+      <div v-if="tempRegime" class="sc-cargo__container">
+        <temp-regime />
+      </div>
+    </transition>
+  </div>
 </template>
 
 <script>
@@ -70,6 +72,10 @@ export default {
 </script>
 
 <style>
+.sc-cargo {
+  width: 100%;
+  margin-bottom: 40px;
+}
 .sc-cargo__container {
   width: 50%;
   margin-bottom: 16px;
