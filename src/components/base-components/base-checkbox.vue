@@ -42,6 +42,10 @@ export default {
   color: #fff;
   letter-spacing: normal;
   cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.base-checkbox__massage:hover {
+  color: var(--COLOR-SECONDARY);
 }
 .base-checkbox {
   width: 24px;
@@ -72,6 +76,7 @@ export default {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 70% 70%;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .base-checkbox:not(:disabled):not(:checked) + .base-checkbox__massage:hover::before {
   border-color: var(--COLOR-SECONDARY);

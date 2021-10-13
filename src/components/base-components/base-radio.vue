@@ -71,7 +71,7 @@ export default {
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .base-radio__input-label:hover {
-  color: var(--COLOR-PRIMARY);
+  color: var(--COLOR-SECONDARY);
 }
 .base-radio__button {
   height: 24px;
@@ -102,6 +102,7 @@ export default {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 50% 50%;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .base-radio__input-radio:not(:disabled):not(:checked) + .base-radio__input-label:hover::before {
   border-color: var(--COLOR-SECONDARY);
