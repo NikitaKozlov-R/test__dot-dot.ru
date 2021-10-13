@@ -16,6 +16,7 @@
         ]"
         :default="'Не выбран'"
         class="select"
+        @input="formDataCargo.typeOfCargo = $event"
       />
     </div>
     <div class="sc-cargo__container--2item">
@@ -31,18 +32,26 @@
           ]"
           :default="'Класс 5 — Окисляющие вещества и органические перекиси'"
           class="select"
+          @input="formDataCargo.hazardClass = $event"
         />
       </div>
       <div class="sc-cargo__container--straight-width">
-        <text-field title="Объявленная ценность, ₽" placeholder="≥ 1" />
+        <text-field v-model="formDataCargo.advertisedPrice" title="Объявленная ценность, ₽" placeholder="≥ 1" />
       </div>
     </div>
     <div class="sc-cargo__container">
-      <base-checkbox v-model="tempRegime" massage="Требуется температурный режим" />
+      <base-checkbox v-model="formDataCargo.tempRegime" massage="Требуется температурный режим" />
     </div>
     <transition name="fade">
-      <div v-if="tempRegime" class="sc-cargo__container">
-        <temp-regime />
+      <div v-if="formDataCargo.tempRegime" class="sc-cargo__container">
+        <div class="temp-regime">
+          <div class="temp-regime__item">
+            <text-field v-model="formDataCargo.tempRegimeFrom" title="От, °C" placeholder="-20" />
+          </div>
+          <div class="temp-regime__item">
+            <text-field v-model="formDataCargo.tempRegimeTo" title="До, °C" placeholder="+23" />
+          </div>
+        </div>
       </div>
     </transition>
   </div>
@@ -53,7 +62,6 @@ import StepTitle from '@/components/base-components/step-title.vue'
 import BaseDropdown from '@/components/base-components/base-dropdown.vue'
 import TextField from '@/components/base-components/text-field.vue'
 import BaseCheckbox from '@/components/base-components/base-checkbox.vue'
-import TempRegime from '@/components/sc-cargo-components/temp-regime.vue'
 
 export default {
   components: {
@@ -61,11 +69,17 @@ export default {
     BaseDropdown,
     TextField,
     BaseCheckbox,
-    TempRegime,
   },
   data() {
     return {
-      tempRegime: false,
+      formDataCargo: {
+        typeOfCargo: '',
+        hazardClass: '',
+        advertisedPrice: '',
+        tempRegime: false,
+        tempRegimeFrom: '',
+        tempRegimeTo: '',
+      },
     }
   },
 }
@@ -90,6 +104,14 @@ export default {
   min-width: 50%;
   margin-right: 12px;
 }
+.temp-regime {
+  width: 50%;
+  display: flex;
+}
+.temp-regime__item {
+  width: calc(100% - 6px);
+  margin-right: 12px;
+}
 
 /* Стили для анимации */
 
@@ -97,7 +119,6 @@ export default {
 .fade-leave-active {
   transition: opacity 0.5s ease;
 }
-
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
