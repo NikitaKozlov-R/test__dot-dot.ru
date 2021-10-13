@@ -1,8 +1,8 @@
 <template>
   <div class="sc-route">
     <step-title title="Маршрут" number="1" />
-    <text-field v-model="formDataRoute.from" title="Откуда" />
-    <text-field v-model="formDataRoute.to" title="Куда" />
+    <text-field v-model="routeFromModel" title="Откуда" />
+    <text-field v-model="routeToModel" title="Куда" />
   </div>
 </template>
 
@@ -15,13 +15,35 @@ export default {
     StepTitle,
     TextField,
   },
-  data() {
-    return {
-      formDataRoute: {
-        from: '',
-        to: '',
+  props: {
+    routeFrom: {
+      type: String,
+      default: '',
+      required: false,
+    },
+    routeTo: {
+      type: String,
+      default: '',
+      required: false,
+    },
+  },
+  computed: {
+    routeFromModel: {
+      get() {
+        return this.routeFrom
       },
-    }
+      set(value) {
+        this.$emit('update:routeFrom', value)
+      },
+    },
+    routeToModel: {
+      get() {
+        return this.routeTo
+      },
+      set(value) {
+        this.$emit('update:routeTo', value)
+      },
+    },
   },
 }
 </script>
