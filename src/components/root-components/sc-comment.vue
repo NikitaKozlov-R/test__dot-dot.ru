@@ -1,9 +1,24 @@
 <template>
-  <div class="sc-component"></div>
+  <div class="sc-component">
+    <base-textarea
+      title="Комментарий к заказу"
+      placeholder="Укажите особенности въезда на территорию склада или подъезда к адресу"
+    />
+  </div>
 </template>
 
 <script>
-export default {}
+import BaseTextarea from '@/components/base-components/base-textarea.vue'
+
+export default {
+  components: {
+    BaseTextarea,
+  },
+}
 </script>
 
-<style></style>
+<style>
+.sc-component {
+  width: 100%;
+}
+</style>
