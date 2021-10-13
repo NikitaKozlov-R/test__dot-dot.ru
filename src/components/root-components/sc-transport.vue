@@ -36,7 +36,7 @@ export default {
 }
 @media screen and (max-width: 900px) {
   .sc-transporn__container {
-    width: 100%;
+    width: calc(100% + 12px);
   }
 }
 </style>

@@ -104,5 +104,11 @@ export default {
 }
 
 @media screen and (max-width: 900px) {
+  .sc-cargo__container {
+    width: 100%;
+  }
+  .sc-cargo__container--2item {
+    width: calc(100% - 12px);
+  }
 }
 </style>

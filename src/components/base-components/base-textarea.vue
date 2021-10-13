@@ -50,4 +50,9 @@ export default {
   -moz-box-shadow: 0px 0px 0px 3px var(--COLOR-PRIMARY);
   box-shadow: 0px 0px 0px 3px var(--COLOR-PRIMARY);
 }
+@media screen and (max-width: 900px) {
+  .base-textarea__textarea {
+    line-height: 100%;
+  }
+}
 </style>
