@@ -75,9 +75,21 @@ export default {
 }
 .base-radio__button {
   height: 24px;
-  color: var(--COLOR-SECONDARY-SUBSTRATE);
+  color: #fff;
   font-size: 14px;
   letter-spacing: normal;
+  background-color: var(--COLOR-SECONDARY-SUBSTRATE);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0 14px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.base-radio__button:hover {
+  background-color: var(--COLOR-SUBSTRATE);
+  -webkit-box-shadow: 0px 0px 0px 2px var(--COLOR-PRIMARY);
+  -moz-box-shadow: 0px 0px 0px 2px var(--COLOR-PRIMARY);
+  box-shadow: 0px 0px 0px 2px var(--COLOR-PRIMARY);
 }
 .base-radio__input-radio {
   position: absolute;
