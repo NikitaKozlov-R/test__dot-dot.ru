@@ -60,7 +60,9 @@ export default {
 }
 .text-field__input:focus {
   border: 1px solid var(--COLOR-PRIMARY);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px var(--COLOR-PRIMARY);
+  -webkit-box-shadow: 0px 0px 0px 2px var(--COLOR-PRIMARY);
+  -moz-box-shadow: 0px 0px 0px 2px var(--COLOR-PRIMARY);
+  box-shadow: 0px 0px 0px 2px var(--COLOR-PRIMARY);
   outline: 0 none;
 }
 </style>

@@ -91,6 +91,12 @@ export default {
   -moz-box-shadow: 0px 0px 0px 2px var(--COLOR-PRIMARY);
   box-shadow: 0px 0px 0px 2px var(--COLOR-PRIMARY);
 }
+.base-radio__button:focus {
+  background-color: var(--COLOR-SUBSTRATE);
+  -webkit-box-shadow: 0px 0px 0px 2px var(--COLOR-PRIMARY);
+  -moz-box-shadow: 0px 0px 0px 2px var(--COLOR-PRIMARY);
+  box-shadow: 0px 0px 0px 2px var(--COLOR-PRIMARY);
+}
 .base-radio__input-radio {
   position: absolute;
   z-index: -1;
