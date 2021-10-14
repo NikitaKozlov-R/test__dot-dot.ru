@@ -19,7 +19,12 @@
       <sc-comment v-model:comment="formData.comment" />
     </sc-group-form>
     <sc-form-hint>
-      <base-hint text="Для расчета стоимости необходимо ввести параметры груза, пункты отправки и прибытия." />
+      <transition name="fade">
+        <base-hint
+          v-if="!hintVisibility"
+          text="Для расчета стоимости необходимо ввести параметры груза, пункты отправки и прибытия."
+        />
+      </transition>
     </sc-form-hint>
   </div>
 </template>
@@ -64,6 +69,11 @@ export default {
         comment: '',
       },
     }
+  },
+  computed: {
+    hintVisibility() {
+      return [this.formData.routeFrom, this.formData.routeTo].every((v) => v !== '')
+    },
   },
 }
 </script>
