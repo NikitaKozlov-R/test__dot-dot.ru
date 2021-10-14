@@ -6,4 +6,5 @@ module.exports = {
       return args
     })
   },
+  publicPath: process.env.NODE_ENV === 'production' ? '/test__dot-dot.ru/' : '/',
 }
