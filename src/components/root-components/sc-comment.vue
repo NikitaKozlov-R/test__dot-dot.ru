@@ -1,7 +1,7 @@
 <template>
   <div class="sc-component">
     <base-textarea
-      v-model:comment="comment"
+      v-model:comment="commentModel"
       title="Комментарий к заказу"
       placeholder="Укажите особенности въезда на территорию склада или подъезда к адресу"
     />
@@ -15,10 +15,22 @@ export default {
   components: {
     BaseTextarea,
   },
-  data() {
-    return {
-      comment: '',
-    }
+  props: {
+    comment: {
+      type: String,
+      default: '',
+      required: false,
+    },
+  },
+  computed: {
+    commentModel: {
+      get() {
+        return this.comment
+      },
+      set(value) {
+        this.$emit('update:comment', value)
+      },
+    },
   },
 }
 </script>

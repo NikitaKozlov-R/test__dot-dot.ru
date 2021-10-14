@@ -14,7 +14,7 @@
           v-model:tempRegimeTo="tempRegimeTo"
         />
         <sc-time />
-        <sc-comment />
+        <sc-comment v-model:comment="comment" />
       </div>
     </straight-car-left-col>
     <straight-car-right-col />
@@ -55,6 +55,7 @@ export default {
       tempRegime: false,
       tempRegimeFrom: '',
       tempRegimeTo: '',
+      comment: '',
     }
   },
 }
