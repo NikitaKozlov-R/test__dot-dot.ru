@@ -11,4 +11,9 @@
   flex-direction: column;
   padding-bottom: 112px;
 }
+@media screen and (max-width: 900px) {
+  .group-form {
+    padding-bottom: 40px;
+  }
+}
 </style>

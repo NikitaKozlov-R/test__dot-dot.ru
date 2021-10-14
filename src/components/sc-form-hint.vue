@@ -15,4 +15,9 @@ export default {}
   flex-direction: column;
   padding-bottom: 112px;
 }
+@media screen and (max-width: 900px) {
+  .form-hint {
+    width: auto;
+  }
+}
 </style>
