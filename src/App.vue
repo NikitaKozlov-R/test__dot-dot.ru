@@ -20,7 +20,9 @@
         <sc-comment v-model:comment="formData.comment" />
       </div>
     </sc-group-form>
-    <sc-form-hint></sc-form-hint>
+    <sc-form-hint>
+      <base-hint hint="Для расчета стоимости необходимо ввести параметры груза, пункты отправки и прибытия." />
+    </sc-form-hint>
   </div>
 </template>
 
@@ -33,6 +35,7 @@ import ScTransport from '@/components/root-components/sc-transport.vue'
 import ScCargo from '@/components/root-components/sc-cargo.vue'
 import ScTime from '@/components/root-components/sc-time.vue'
 import ScComment from '@/components/root-components/sc-comment.vue'
+import BaseHint from '@/components/base-components/base-hint.vue'
 
 export default {
   name: 'App',
@@ -45,6 +48,7 @@ export default {
     ScCargo,
     ScTime,
     ScComment,
+    BaseHint,
   },
   data() {
     return {
