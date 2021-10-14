@@ -43,6 +43,11 @@ export default {
       required: false,
       default: 0,
     },
+    modelValue: {
+      type: String,
+      default: '',
+      required: false,
+    },
   },
   data() {
     return {
@@ -51,14 +56,14 @@ export default {
     }
   },
   mounted() {
-    this.$emit('input', this.selected)
+    this.$emit('update:modelValue', this.selected)
   },
 
   methods: {
     handleOptionSelect(option) {
       this.selected = option
       this.open = false
-      this.$emit('input', option)
+      this.$emit('update:modelValue', option)
     },
   },
 }
