@@ -4,7 +4,7 @@
       <div class="left-col">
         <sc-header />
         <sc-route v-model:routeFrom="routeFrom" v-model:routeTo="routeTo" />
-        <sc-transport />
+        <sc-transport v-model:carryingСapacity="carryingСapacity" v-model:loadingMethod="loadingMethod" />
         <sc-cargo />
         <sc-time />
         <sc-comment />
@@ -40,6 +40,8 @@ export default {
     return {
       routeFrom: '',
       routeTo: '',
+      carryingСapacity: '',
+      loadingMethod: '',
     }
   },
 }

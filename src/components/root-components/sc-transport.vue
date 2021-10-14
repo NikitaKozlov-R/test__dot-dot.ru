@@ -2,18 +2,18 @@
   <step-title title="Транспорт" number="2" />
   <div class="sc-transporn__container">
     <base-dropdown
+      v-model="carryingСapacityModel"
       title="Грузоподъёмность"
       :options="['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4', 'Вариант 5']"
       :default="'Не выбрана'"
       class="select"
-      @input="formDataTransport.carryingСapacity = $event"
     />
     <base-dropdown
+      v-model="loadingMethodModel"
       title="Способ погрузки"
       :options="['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4', 'Вариант 5']"
       :default="'Задняя'"
       class="select"
-      @input="formDataTransport.loadingMethod = $event"
     />
   </div>
 </template>
@@ -27,13 +27,35 @@ export default {
     StepTitle,
     BaseDropdown,
   },
-  data() {
-    return {
-      formDataTransport: {
-        carryingСapacity: '',
-        loadingMethod: '',
+  props: {
+    carryingСapacity: {
+      type: String,
+      default: '',
+      required: false,
+    },
+    loadingMethod: {
+      type: String,
+      default: '',
+      required: false,
+    },
+  },
+  computed: {
+    carryingСapacityModel: {
+      get() {
+        return this.carryingСapacity
       },
-    }
+      set(value) {
+        this.$emit('update:carryingСapacity', value)
+      },
+    },
+    loadingMethodModel: {
+      get() {
+        return this.loadingMethod
+      },
+      set(value) {
+        this.$emit('update:loadingMethod', value)
+      },
+    },
   },
 }
 </script>
