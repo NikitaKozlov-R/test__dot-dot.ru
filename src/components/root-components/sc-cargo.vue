@@ -183,17 +183,6 @@ export default {
   margin-right: 12px;
 }
 
-/* Стили для анимации */
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
 @media screen and (max-width: 900px) {
   .sc-cargo__container--2item {
     width: calc(100% - 12px);
