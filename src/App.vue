@@ -1,29 +1,32 @@
 <template>
   <div class="wrapper">
-    <straight-car-left-col>
+    <sc-group-form>
       <div class="left-col">
         <sc-header />
-        <sc-route v-model:routeFrom="routeFrom" v-model:routeTo="routeTo" />
-        <sc-transport v-model:carryingСapacity="carryingСapacity" v-model:loadingMethod="loadingMethod" />
+        <sc-route v-model:routeFrom="formData.routeFrom" v-model:routeTo="formData.routeTo" />
+        <sc-transport
+          v-model:carryingСapacity="formData.carryingСapacity"
+          v-model:loadingMethod="formData.loadingMethod"
+        />
         <sc-cargo
-          v-model:typeOfCargo="typeOfCargo"
-          v-model:hazardClass="hazardClass"
-          v-model:advertisedPrice="advertisedPrice"
-          v-model:tempRegime="tempRegime"
-          v-model:tempRegimeFrom="tempRegimeFrom"
-          v-model:tempRegimeTo="tempRegimeTo"
+          v-model:typeOfCargo="formData.typeOfCargo"
+          v-model:hazardClass="formData.hazardClass"
+          v-model:advertisedPrice="formData.advertisedPrice"
+          v-model:tempRegime="formData.tempRegime"
+          v-model:tempRegimeFrom="formData.tempRegimeFrom"
+          v-model:tempRegimeTo="formData.tempRegimeTo"
         />
         <sc-time />
-        <sc-comment v-model:comment="comment" />
+        <sc-comment v-model:comment="formData.comment" />
       </div>
-    </straight-car-left-col>
-    <straight-car-right-col />
+    </sc-group-form>
+    <sc-form-hint></sc-form-hint>
   </div>
 </template>
 
 <script>
-import StraightCarLeftCol from '@/components/straight-car-left-col.vue'
-import StraightCarRightCol from '@/components/straight-car-right-col.vue'
+import ScGroupForm from '@/components/sc-group-form.vue'
+import ScFormHint from '@/components/sc-form-hint.vue'
 import ScHeader from '@/components/root-components/sc-header.vue'
 import ScRoute from '@/components/root-components/sc-route.vue'
 import ScTransport from '@/components/root-components/sc-transport.vue'
@@ -34,8 +37,8 @@ import ScComment from '@/components/root-components/sc-comment.vue'
 export default {
   name: 'App',
   components: {
-    StraightCarLeftCol,
-    StraightCarRightCol,
+    ScGroupForm,
+    ScFormHint,
     ScHeader,
     ScRoute,
     ScTransport,
@@ -45,17 +48,19 @@ export default {
   },
   data() {
     return {
-      routeFrom: '',
-      routeTo: '',
-      carryingСapacity: '',
-      loadingMethod: '',
-      typeOfCargo: '',
-      hazardClass: '',
-      advertisedPrice: '',
-      tempRegime: false,
-      tempRegimeFrom: '',
-      tempRegimeTo: '',
-      comment: '',
+      formData: {
+        routeFrom: '',
+        routeTo: '',
+        carryingСapacity: '',
+        loadingMethod: '',
+        typeOfCargo: '',
+        hazardClass: '',
+        advertisedPrice: '',
+        tempRegime: false,
+        tempRegimeFrom: '',
+        tempRegimeTo: '',
+        comment: '',
+      },
     }
   },
 }
