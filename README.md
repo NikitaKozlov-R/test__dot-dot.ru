@@ -1,7 +1,5 @@
 # test\_\_dot-dot.ru
 
-@input="alert(displayToKey($event))"
-
 ## Project setup
 
 ```

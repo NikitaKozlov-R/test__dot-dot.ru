@@ -1,7 +1,12 @@
 <template>
   <div class="base-textarea">
     <label class="base-textarea__title" for="base-textarea">{{ title }}</label>
-    <textarea id="base-textarea" class="base-textarea__textarea" :placeholder="placeholder"></textarea>
+    <textarea
+      id="base-textarea"
+      v-model="commentModel"
+      class="base-textarea__textarea"
+      :placeholder="placeholder"
+    ></textarea>
   </div>
 </template>
 
@@ -16,6 +21,21 @@ export default {
       required: false,
       default: '',
       type: String,
+    },
+    comment: {
+      type: String,
+      default: 'Комментарий не был дан',
+      required: false,
+    },
+  },
+  computed: {
+    commentModel: {
+      get() {
+        return this.comment
+      },
+      set(value) {
+        this.$emit('update:comment', value)
+      },
     },
   },
 }

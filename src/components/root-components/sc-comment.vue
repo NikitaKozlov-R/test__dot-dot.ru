@@ -1,6 +1,7 @@
 <template>
   <div class="sc-component">
     <base-textarea
+      v-model:comment="comment"
       title="Комментарий к заказу"
       placeholder="Укажите особенности въезда на территорию склада или подъезда к адресу"
     />
@@ -13,6 +14,11 @@ import BaseTextarea from '@/components/base-components/base-textarea.vue'
 export default {
   components: {
     BaseTextarea,
+  },
+  data() {
+    return {
+      comment: '',
+    }
   },
 }
 </script>
