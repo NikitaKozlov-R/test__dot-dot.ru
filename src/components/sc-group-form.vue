@@ -1,11 +1,11 @@
 <template>
-  <div class="left-col">
+  <div class="group-form">
     <slot />
   </div>
 </template>
 
 <style>
-.left-col {
+.group-form {
   width: 100%;
   display: flex;
   flex-direction: column;
