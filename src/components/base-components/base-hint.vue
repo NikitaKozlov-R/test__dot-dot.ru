@@ -1,7 +1,9 @@
 <template>
-  <div class="base-hint">
-    <p class="base-hint__text">{{ text }}</p>
-  </div>
+  <transition name="fade">
+    <div class="base-hint">
+      <p class="base-hint__text">{{ text }}</p>
+    </div>
+  </transition>
 </template>
 
 <script>
