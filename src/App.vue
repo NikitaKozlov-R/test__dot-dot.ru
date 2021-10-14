@@ -5,7 +5,14 @@
         <sc-header />
         <sc-route v-model:routeFrom="routeFrom" v-model:routeTo="routeTo" />
         <sc-transport v-model:carryingСapacity="carryingСapacity" v-model:loadingMethod="loadingMethod" />
-        <sc-cargo />
+        <sc-cargo
+          v-model:typeOfCargo="typeOfCargo"
+          v-model:hazardClass="hazardClass"
+          v-model:advertisedPrice="advertisedPrice"
+          v-model:tempRegime="tempRegime"
+          v-model:tempRegimeFrom="tempRegimeFrom"
+          v-model:tempRegimeTo="tempRegimeTo"
+        />
         <sc-time />
         <sc-comment />
       </div>
@@ -42,6 +49,12 @@ export default {
       routeTo: '',
       carryingСapacity: '',
       loadingMethod: '',
+      typeOfCargo: '',
+      hazardClass: '',
+      advertisedPrice: '',
+      tempRegime: false,
+      tempRegimeFrom: '',
+      tempRegimeTo: '',
     }
   },
 }
