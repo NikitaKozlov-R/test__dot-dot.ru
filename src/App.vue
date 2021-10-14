@@ -1,27 +1,25 @@
 <template>
   <div class="wrapper">
     <sc-group-form>
-      <div class="left-col">
-        <sc-header />
-        <sc-route v-model:routeFrom="formData.routeFrom" v-model:routeTo="formData.routeTo" />
-        <sc-transport
-          v-model:carryingСapacity="formData.carryingСapacity"
-          v-model:loadingMethod="formData.loadingMethod"
-        />
-        <sc-cargo
-          v-model:typeOfCargo="formData.typeOfCargo"
-          v-model:hazardClass="formData.hazardClass"
-          v-model:advertisedPrice="formData.advertisedPrice"
-          v-model:tempRegime="formData.tempRegime"
-          v-model:tempRegimeFrom="formData.tempRegimeFrom"
-          v-model:tempRegimeTo="formData.tempRegimeTo"
-        />
-        <sc-time />
-        <sc-comment v-model:comment="formData.comment" />
-      </div>
+      <sc-header />
+      <sc-route v-model:routeFrom="formData.routeFrom" v-model:routeTo="formData.routeTo" />
+      <sc-transport
+        v-model:carryingСapacity="formData.carryingСapacity"
+        v-model:loadingMethod="formData.loadingMethod"
+      />
+      <sc-cargo
+        v-model:typeOfCargo="formData.typeOfCargo"
+        v-model:hazardClass="formData.hazardClass"
+        v-model:advertisedPrice="formData.advertisedPrice"
+        v-model:tempRegime="formData.tempRegime"
+        v-model:tempRegimeFrom="formData.tempRegimeFrom"
+        v-model:tempRegimeTo="formData.tempRegimeTo"
+      />
+      <sc-time />
+      <sc-comment v-model:comment="formData.comment" />
     </sc-group-form>
     <sc-form-hint>
-      <base-hint hint="Для расчета стоимости необходимо ввести параметры груза, пункты отправки и прибытия." />
+      <base-hint text="Для расчета стоимости необходимо ввести параметры груза, пункты отправки и прибытия." />
     </sc-form-hint>
   </div>
 </template>
